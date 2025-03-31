@@ -1,0 +1,15 @@
+{
+  "home": {
+    "title": "Home",
+    "welcome": "Welcome to our website"
+  },
+  "about": {
+    "title": "About",
+    "content": "We are a company..."
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "contact": "Contact"
+  }
+}
