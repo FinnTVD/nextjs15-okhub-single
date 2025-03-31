@@ -4,12 +4,21 @@
 import {useEffect, useRef} from 'react'
 import grapesjs from 'grapesjs'
 import 'grapesjs/dist/css/grapes.min.css'
+
+// Import các plugin miễn phí
 import grapesjsPresetWebpage from 'grapesjs-preset-webpage'
 import grapesjsBlocksBasic from 'grapesjs-blocks-basic'
 import grapesjsPluginForms from 'grapesjs-plugin-forms'
 import grapesjsPluginExport from 'grapesjs-plugin-export'
 import grapesjsComponentCountdown from 'grapesjs-component-countdown'
 import grapesjsNavbar from 'grapesjs-navbar'
+import grapesjsStyleBg from 'grapesjs-style-bg'
+import grapesjsTabs from 'grapesjs-tabs'
+import grapesjsTooltip from 'grapesjs-tooltip'
+import grapesjsCustomCode from 'grapesjs-custom-code'
+import grapesjsTouch from 'grapesjs-touch'
+import grapesjsParserPostcss from 'grapesjs-parser-postcss'
+import grapesjsPluginCkeditor from 'grapesjs-plugin-ckeditor'
 
 export default function SDKExample() {
   const editorRef = useRef<HTMLDivElement>(null)
@@ -29,6 +38,13 @@ export default function SDKExample() {
           grapesjsPluginExport,
           grapesjsComponentCountdown,
           grapesjsNavbar,
+          grapesjsStyleBg,
+          grapesjsTabs,
+          grapesjsTooltip,
+          grapesjsCustomCode,
+          grapesjsTouch,
+          grapesjsParserPostcss,
+          grapesjsPluginCkeditor,
         ],
         pluginsOpts: {
           grapesjsPresetWebpage: {},
@@ -37,6 +53,13 @@ export default function SDKExample() {
           grapesjsPluginExport: {},
           grapesjsComponentCountdown: {},
           grapesjsNavbar: {},
+          grapesjsStyleBg: {},
+          grapesjsTabs: {},
+          grapesjsTooltip: {},
+          grapesjsCustomCode: {},
+          grapesjsTouch: {},
+          grapesjsParserPostcss: {},
+          grapesjsPluginCkeditor: {},
         },
       })
     }
