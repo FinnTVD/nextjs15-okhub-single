@@ -3,7 +3,7 @@
 
 import {useEffect, useRef} from 'react'
 import grapesjs from 'grapesjs'
-import 'grapesjs/dist/css/grapes.min.css'
+import '@/modules/grapesjs/dist/css/grapes.min.css'
 
 // Import các plugin miễn phí
 import grapesjsPresetWebpage from 'grapesjs-preset-webpage'
@@ -21,7 +21,7 @@ import grapesjsParserPostcss from 'grapesjs-parser-postcss'
 import grapesjsPluginCkeditor from 'grapesjs-plugin-ckeditor'
 
 // Import plugin Destack vừa tạo
-import grapesjsDestack from './grapesjs-destack'
+import pluginCustom from './plugin-custom'
 
 export default function IndexGrapejs() {
   const editorRef = useRef<HTMLDivElement>(null)
@@ -35,6 +35,10 @@ export default function IndexGrapejs() {
         fromElement: true,
         storageManager: {autoload: false},
         plugins: [
+          // plugins custom
+          pluginCustom,
+
+          // plugins system
           grapesjsPresetWebpage,
           grapesjsBlocksBasic,
           grapesjsPluginForms,
@@ -48,9 +52,12 @@ export default function IndexGrapejs() {
           grapesjsTouch,
           grapesjsParserPostcss,
           grapesjsPluginCkeditor,
-          grapesjsDestack,
         ],
         pluginsOpts: {
+          // plugins custom
+          pluginCustom: {},
+
+          // plugins system
           grapesjsPresetWebpage: {},
           grapesjsBlocksBasic: {},
           grapesjsPluginForms: {},
@@ -64,7 +71,6 @@ export default function IndexGrapejs() {
           grapesjsTouch: {},
           grapesjsParserPostcss: {},
           grapesjsPluginCkeditor: {},
-          grapesjsDestack: {},
         },
       })
 

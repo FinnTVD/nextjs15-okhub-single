@@ -12,7 +12,7 @@ export default (editor, opts = {}) => {
       <span>Hero Section Custom</span>
     </div>
   `,
-    category: 'MB Components',
+    category: 'MB Bank Custom',
     content: `
       <section>
         <h1>Welcome to MB Bank</h1>
@@ -41,6 +41,4 @@ export default (editor, opts = {}) => {
   //     </div>
   //   `,
   // })
-
-  console.log('✅ GrapesJS Destack Plugin Loaded')
 }
