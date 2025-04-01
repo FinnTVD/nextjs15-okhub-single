@@ -2,7 +2,7 @@
 
 import dynamic from 'next/dynamic'
 const IndexGrapejs = dynamic(
-  () => import('@/app/[locale]/okhub-free/_components/IndexGrapejs'),
+  () => import('@/app/[locale]/mbbank-builder/_components/IndexGrapejs'),
   {ssr: false},
 )
 

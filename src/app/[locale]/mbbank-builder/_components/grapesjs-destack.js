@@ -4,9 +4,15 @@ export default (editor, opts = {}) => {
   const bm = editor.BlockManager
 
   // Thêm block cho Hero Section
-  bm.add('destack-hero', {
-    label: 'Hero Section',
-    category: 'Destack Components',
+  bm.add('mb-hero', {
+    label: `
+    <div style="display: flex; align-items: center;flex-direction: column; gap: 10px">
+      <img src="https://pay2s.vn/wp-content/uploads/2024/10/thumbnail-logo-MBBank.jpg.webp" 
+           style="width: 100px; height: auto; border-radius: 5px" />
+      <span>Hero Section Custom</span>
+    </div>
+  `,
+    category: 'MB Components',
     content: `
       <section>
         <h1>Welcome to MB Bank</h1>
