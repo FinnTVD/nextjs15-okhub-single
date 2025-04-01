@@ -2,12 +2,16 @@
 
 import dynamic from 'next/dynamic'
 const IndexGrapejs = dynamic(
-  () => import('@/app/[locale]/okhub-free/IndexGrapejs'),
+  () => import('@/app/[locale]/okhub-free/_components/IndexGrapejs'),
   {ssr: false},
 )
 
 const IndexOkhubFree = () => {
-  return <IndexGrapejs />
+  return (
+    <>
+      <IndexGrapejs />
+    </>
+  )
 }
 
 export default IndexOkhubFree

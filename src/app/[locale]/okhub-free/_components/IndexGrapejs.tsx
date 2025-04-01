@@ -20,12 +20,15 @@ import grapesjsTouch from 'grapesjs-touch'
 import grapesjsParserPostcss from 'grapesjs-parser-postcss'
 import grapesjsPluginCkeditor from 'grapesjs-plugin-ckeditor'
 
+// Import plugin Destack vừa tạo
+import grapesjsDestack from './grapesjs-destack'
+
 export default function IndexGrapejs() {
   const editorRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (editorRef.current) {
-      const editor = grapesjs.init({
+      grapesjs.init({
         container: editorRef.current,
         height: '100vh',
         width: 'auto',
@@ -45,6 +48,7 @@ export default function IndexGrapejs() {
           grapesjsTouch,
           grapesjsParserPostcss,
           grapesjsPluginCkeditor,
+          grapesjsDestack,
         ],
         pluginsOpts: {
           grapesjsPresetWebpage: {},
@@ -60,13 +64,34 @@ export default function IndexGrapejs() {
           grapesjsTouch: {},
           grapesjsParserPostcss: {},
           grapesjsPluginCkeditor: {},
+          grapesjsDestack: {},
         },
       })
+
+      // 🛠️ Thêm logo vào giữa thanh công cụ
+      setTimeout(() => {
+        const panelButtons = document.querySelector(
+          '.gjs-pn-panels .gjs-pn-buttons',
+        )
+        if (panelButtons) {
+          const logo = document.createElement('img')
+          logo.src = '/mbbank/Logo_MB_new.png' // 🔹 Thay đường dẫn logo của bạn
+          logo.alt = 'Logo'
+          logo.style.height = '40px' // 🔹 Điều chỉnh kích thước logo
+          logo.style.margin = '0 auto' // 🔹 Căn giữa logo
+
+          // Thêm logo vào giữa các nút
+          panelButtons.insertBefore(
+            logo,
+            panelButtons.children[Math.floor(panelButtons.children.length / 2)],
+          )
+        }
+      }, 500) // Đợi GrapesJS load xong trước khi chèn logo
     }
   }, [])
 
   return (
-    <main className='flex h-screen flex-col justify-between p-5 gap-2'>
+    <main className='flex h-screen'>
       <div
         className='flex-1 w-full h-full overflow-hidden'
         ref={editorRef}

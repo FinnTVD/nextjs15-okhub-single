@@ -80,6 +80,12 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  --gjs-primary-color: #007bff;
+  --gjs-secondary-color: #6c757d;
+  --gjs-bg-color: #343a40;
+  --gjs-main-color: #ffffff;
+  --gjs-panel-bg: #222;
 }
 
 .dark {
@@ -216,5 +222,18 @@ input[type='number'] {
   -moz-appearance: textfield;
 }
 
-#grapesjs-studio {
+#cke_notifications_area_igsa,
+.cke_notifications_area {
+  display: none !important;
+}
+
+.gjs-one-bg {
+  background-color: #0d17d449 !important; /* Thay đổi màu nền */
+}
+.gjs-two-color {
+  color: #fff !important; /* Thay đổi màu chữ */
+}
+
+.gjs-pn-panel.gjs-pn-commands.gjs-one-bg.gjs-two-color {
+  padding: 0;
 }
