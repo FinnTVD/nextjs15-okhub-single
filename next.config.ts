@@ -8,11 +8,12 @@ const withBundleAnalyzer = bundleAnalyzer({
 const nextConfig: NextConfig = {
   images: {
     formats: ['image/webp'],
-    minimumCacheTTL: 3600,
+    minimumCacheTTL: 2678400,
     remotePatterns: [
       { protocol: 'https', hostname: '**' },
       { protocol: 'http', hostname: '**' },
     ],
+    deviceSizes: [430, 768, 1080, 1280, 1600, 1920],
   },
   reactStrictMode: false,
   output: 'standalone',
@@ -22,7 +23,7 @@ const nextConfig: NextConfig = {
   experimental: {
     viewTransition: true,
     webVitalsAttribution: ['CLS', 'LCP'],
-    useCache: true,
+    // cssChunking: true,
   },
   eslint: {
     ignoreDuringBuilds: true,

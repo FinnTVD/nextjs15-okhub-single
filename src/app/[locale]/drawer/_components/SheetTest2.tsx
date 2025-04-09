@@ -19,7 +19,7 @@ import {
 } from '@/components/ui/sheet'
 import IndexOkhubFree from '@/app/[locale]/mbbank-builder/_components/IndexOkhubFree'
 
-export default function SheetTest({
+export default function SheetTest2({
   open,
   setOpen,
 }: {
@@ -32,12 +32,12 @@ export default function SheetTest({
       onOpenChange={setOpen}
     >
       <SheetContent className='h-screen w-full overflow-y-auto'>
-        <IndexOkhubFree />
         <SheetHeader className='hidden'>
           <SheetTitle></SheetTitle>
           <SheetDescription></SheetDescription>
         </SheetHeader>
         <div className='h-[200vh] w-full'>
+          <IndexOkhubFree />
           <div className='h-[110vh] w-full bg-white'></div>
           <Drawer>
             <DrawerTrigger asChild>

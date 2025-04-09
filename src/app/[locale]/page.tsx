@@ -1,4 +1,5 @@
 'use server'
+import ButtonTransition from '@/app/[locale]/_components/ButtonTransition'
 import ImageFallback from '@/components/image/ImageFallback'
 import {Button} from '@/components/ui/button'
 import {Link} from '@/i18n/navigation'
@@ -52,6 +53,7 @@ export default async function Home({
                 Components
               </Link>
             </Button>
+            <ButtonTransition />
           </div>
         </div>
         {/* <FormAuth session={session} />
