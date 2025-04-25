@@ -1,5 +1,4 @@
 import { NextConfig } from 'next';
-import createNextIntlPlugin from 'next-intl/plugin';
 import bundleAnalyzer from '@next/bundle-analyzer';
 
 const withBundleAnalyzer = bundleAnalyzer({
@@ -25,6 +24,9 @@ const nextConfig: NextConfig = {
     webVitalsAttribution: ['CLS', 'LCP'],
     // cssChunking: true,
   },
+  env: {
+    API: '/wp-json/api/v2',
+  },
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -33,7 +35,6 @@ const nextConfig: NextConfig = {
   },
 };
 
-const withNextIntl = createNextIntlPlugin();
 //ANALYZE=true npm run build
 
-export default withNextIntl(withBundleAnalyzer(nextConfig));
+export default withBundleAnalyzer(nextConfig);
