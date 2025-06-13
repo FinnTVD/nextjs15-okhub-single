@@ -1,11 +1,10 @@
-import {Toaster} from '@/components/ui/sonner'
+import { Toaster } from '@/components/ui/sonner'
 import GsapProvider from '@/provider/GsapProvider'
-import {ViewTransitions} from 'next-view-transitions'
 import NextTopLoader from 'nextjs-toploader'
 
-export default function MainLayout({children}: {children: React.ReactNode}) {
+export default function MainLayout({ children }: { children: React.ReactNode }) {
   return (
-    <ViewTransitions>
+    <>
       <GsapProvider>{children}</GsapProvider>
       <Toaster richColors />
       <NextTopLoader
@@ -23,6 +22,6 @@ export default function MainLayout({children}: {children: React.ReactNode}) {
         zIndex={1600}
         showAtBottom={false}
       />
-    </ViewTransitions>
+    </>
   )
 }
